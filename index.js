@@ -82,38 +82,38 @@ const collectServerStatus = async () => {
 
   serverUptimeGauge.set(
     {
-      server: 'robin'
+      server: process.env.SERVER_NAME
     },
     uptime
   )
   serverBytesInGauge.set(
     {
-      server: 'robin'
+      server: process.env.SERVER_NAME
     },
     bytesIn
   )
   serverBytesInRateGauge.set(
     {
-      server: 'robin'
+      server: process.env.SERVER_NAME
     },
     bytesInRate
   )
   serverBytesOutGauge.set(
     {
-      server: 'robin'
+      server: process.env.SERVER_NAME
     },
     bytesOut
   )
   serverBytesOutRateGauge.set(
     {
-      server: 'robin'
+      server: process.env.SERVER_NAME
     },
     bytesOutRate
   )
 
   serverTotalConnectionsGauge.set(
     {
-      server: 'robin'
+      server: process.env.SERVER_NAME
     },
     totalConnections
   )
@@ -132,13 +132,13 @@ const collectStreamsStatus = async () => {
   const health = validStreams.filter((item) => item.isConnected)
   serviceHealthStreamsGauge.set(
     {
-      server: 'robin'
+      server: process.env.SERVER_NAME
     },
     health.length
   )
   serviceTotalStreamsGauge.set(
     {
-      server: 'robin'
+      server: process.env.SERVER_NAME
     },
     validStreams.length
   )
