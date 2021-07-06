@@ -10,8 +10,8 @@ const auth = {
 }
 
 const app = express()
-app.get('/', async (req, res) => {
-  if (req.query.a === process.env.AUTH) {
+app.get('/:auth', async (req, res) => {
+  if (req.params.auth === process.env.AUTH) {
     res.end(await Prometheus.register.metrics())
   } else {
     res.send({ auth: false })
